@@ -25,4 +25,6 @@ function setActive(e) {
     } else {
         classes.add("active")
     }
+
+    return false
 }
