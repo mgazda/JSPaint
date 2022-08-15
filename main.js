@@ -6,6 +6,7 @@ function run() {
        const node = document.createElement("div")
        node.setAttribute("class", "box")
        node.onmouseenter = node.onmousedown = setActive
+       node.ontouchstart = node.ontouchmove = setActive
        appElement.appendChild(node)
     } 
 
@@ -13,7 +14,7 @@ function run() {
 }
 
 function setActive(e) {
-    if (e.buttons == 0) {
+    if (e.buttons == 0 && e.touches != undefined) {
         return
     }
     const node = e.target
